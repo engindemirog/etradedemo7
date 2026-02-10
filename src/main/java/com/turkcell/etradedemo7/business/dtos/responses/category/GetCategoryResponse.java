@@ -1,32 +1,23 @@
-package com.turkcell.etradedemo7.business.dtos.responses.product;
+package com.turkcell.etradedemo7.business.dtos.responses.category;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class GetProductResponse {
+public class GetCategoryResponse {
 
     private int id;
     private String name;
     private String description;
-    private BigDecimal unitPrice;
-    private int stockQuantity;
-    private int categoryId;
-    private String categoryName;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
     private boolean isActive;
 
-    public GetProductResponse() {
+    public GetCategoryResponse() {
     }
 
-    public GetProductResponse(int id, String name, String description, BigDecimal unitPrice, int stockQuantity, int categoryId, String categoryName, LocalDateTime createdDate, LocalDateTime updatedDate, boolean isActive) {
+    public GetCategoryResponse(int id, String name, String description, LocalDateTime createdDate, LocalDateTime updatedDate, boolean isActive) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.unitPrice = unitPrice;
-        this.stockQuantity = stockQuantity;
-        this.categoryId = categoryId;
-        this.categoryName = categoryName;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
         this.isActive = isActive;
@@ -54,38 +45,6 @@ public class GetProductResponse {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public BigDecimal getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    public int getStockQuantity() {
-        return stockQuantity;
-    }
-
-    public void setStockQuantity(int stockQuantity) {
-        this.stockQuantity = stockQuantity;
-    }
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
     }
 
     public LocalDateTime getCreatedDate() {

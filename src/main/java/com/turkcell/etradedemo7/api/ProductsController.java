@@ -8,7 +8,6 @@ import com.turkcell.etradedemo7.business.dtos.responses.product.GetAllProductsRe
 import com.turkcell.etradedemo7.business.dtos.responses.product.GetProductResponse;
 import com.turkcell.etradedemo7.business.dtos.responses.product.UpdatedProductResponse;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +23,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
-@RequiredArgsConstructor
 public class ProductsController {
 
     private final ProductService productService;
+
+    public ProductsController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)

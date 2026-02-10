@@ -4,15 +4,9 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class CreateProductRequest {
 
     @NotBlank(message = "Product name is required.")
@@ -28,4 +22,58 @@ public class CreateProductRequest {
 
     @Min(value = 0, message = "Stock quantity must be at least 0.")
     private int stockQuantity;
+
+    @NotNull(message = "Category id is required.")
+    private int categoryId;
+
+    public CreateProductRequest() {
+    }
+
+    public CreateProductRequest(String name, String description, BigDecimal unitPrice, int stockQuantity, int categoryId) {
+        this.name = name;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.stockQuantity = stockQuantity;
+        this.categoryId = categoryId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 }
